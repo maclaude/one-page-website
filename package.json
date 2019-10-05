@@ -1,0 +1,16 @@
+{
+  "name": "one-page-website",
+  "version": "1.0.0",
+  "description": "one page website with smooth scrolling",
+  "author": "Marc-Antoine CLAUDE <claude.marcantoine2@gmail.com>",
+  "license": "MIT",
+  "main": "index.js",
+  "scripts": {
+    "start": "gulp style && gulp watch"
+  },
+  "devDependencies": {
+    "browser-sync": "^2.26.7",
+    "gulp": "^4.0.2",
+    "gulp-sass": "^4.0.2"
+  }
+}

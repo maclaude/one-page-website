@@ -1,0 +1,18 @@
+# Installed dependencies folder
+node_modules/
+
+# Environnement variables file
+.env
+
+# VS Code files
+.vs/
+.vs-code/
+
+# Mac OS system file
+.DS_Store
+
+# Windows system file
+Thumbs.db
+
+# Yarn error log file
+yarn-error.log
