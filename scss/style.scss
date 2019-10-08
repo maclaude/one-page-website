@@ -4,10 +4,6 @@
   --green-color: #00FFBC;
 }
 
-html {
-  scroll-behavior: smooth;
-}
-
 body {
   font-family: 'Poppins', sans-serif;
   text-align: center;
@@ -63,7 +59,6 @@ header {
 
 .section {
   height: 100vh;
-  border-bottom: 1px solid #85929E;
   position: relative;
 
   &__title {
@@ -99,12 +94,21 @@ header {
   position: absolute;
   bottom: 25px;
   right: 25px;
-  color: var(--icon-color);
+  color: #FFF;
   cursor: pointer;
+  z-index: 1;
 
   &:hover {
-    color: var(--text-color);
     transform: scaleX(1.3) scaleY(1.3) rotate(360deg);
     transition: all 500ms ease-in;
   }
+}
+
+/* Background wave */
+
+.bottom-wave {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  left: 0;
 }
