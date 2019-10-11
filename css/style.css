@@ -15,17 +15,24 @@ h1 {
   font-weight: 700; }
 
 /* Header */
-header {
-  position: absolute;
+.header {
+  position: fixed;
   top: 0;
   left: 0;
   right: 0;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15); }
-
-header::after {
-  content: '';
-  clear: both;
-  display: block; }
+  background: #FFF;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  z-index: 100;
+  transform-origin: top;
+  transition: transform 400ms ease-in-out; }
+  .header::after {
+    content: '';
+    clear: both;
+    display: block; }
+  .header--up {
+    transform: scale(1, 0); }
+    .header--up .navigation__link a {
+      opacity: 0; }
 
 .logo {
   height: 75px;
@@ -57,7 +64,7 @@ header::after {
       display: block;
       padding: 2em;
       opacity: 0;
-      transition: opacity 250ms ease-in-out 250ms; }
+      transition: opacity 250ms ease-in-out 300ms; }
   .navigation--open {
     transform: scale(1, 1); }
     .navigation--open .navigation__link a {

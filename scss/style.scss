@@ -19,18 +19,31 @@ h1 {
 
 /* Header */
 
-header {
-  position: absolute;
+.header {
+  position: fixed;
   top: 0;
   left: 0;
   right: 0;
+  background: #FFF;
   box-shadow: 0 2px 8px rgba(0,0,0,.15);
-}
+  z-index: 100;
+  transform-origin: top;
+  transition: transform 400ms ease-in-out;
 
-header::after {
-  content: '';
-  clear: both;
-  display: block;
+  &::after {
+    content: '';
+    clear: both;
+    display: block;
+  }
+
+  &--up {
+    transform: scale(1, 0);
+
+    .navigation__link a {
+      opacity: 0;
+    }
+  }
+
 }
 
 .logo {
@@ -67,7 +80,7 @@ header::after {
       display: block;
       padding: 2em;
       opacity: 0;
-      transition: opacity 250ms ease-in-out 250ms;
+      transition: opacity 250ms ease-in-out 300ms;
     }
   }
 
