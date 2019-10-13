@@ -10,6 +10,7 @@ const app = {
     app.smoothScrolling();
     app.navigationToggle();
     app.headerToggleOnScroll();
+    app.headerStyleOnScroll();
   },
 
   smoothScrolling: () => {
@@ -50,6 +51,26 @@ const app = {
       // Setting last scroll top position
       lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
     });
+  },
+
+  headerStyleOnScroll: () => {
+    const sectionHero = document.querySelector("#section-hero");
+
+    const sectionHeroOptions = {
+      rootMargin: "-150px 0px 0px 0px"
+    };
+
+    const sectionHeroObserver = new IntersectionObserver((entries, sectionHeroObserver) => {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) {
+          app.header.classList.add('header--scrolled');
+        } else {
+          app.header.classList.remove('header--scrolled');
+        }
+      })
+    }, sectionHeroOptions);
+
+    sectionHeroObserver.observe(sectionHero);
   }
 };
 
