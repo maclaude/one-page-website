@@ -29,6 +29,7 @@ const app = {
     // Close dropdown navigation on link click
     navigationLinks.forEach(link => {
       link.addEventListener('click', () => {
+        app.menuIcon.classList.remove('open');
         app.navigation.classList.remove('navigation--open');
       });
     })

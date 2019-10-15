@@ -1,5 +1,8 @@
+/* Global style
+================= */
+
 :root {
-  --icon: #ABB2B9;
+  --icon: #ffffff;
   --text: #34495E;
   --neon-green: #00FFBC;
 }
@@ -11,12 +14,18 @@ body {
   position: relative;
 }
 
+/* Typography
+================= */
+
 h1 {
   font-size: 1.6rem;
   font-weight: 700;
 }
 
-/* Header */
+/* Layout
+================= */
+
+/* === Header === */
 
 .header {
   --header-background: #000114;
@@ -56,7 +65,7 @@ h1 {
   }
 }
 
-/* Navigation */
+/* === Navigation === */
 
 .navigation {
   display: flex;
@@ -104,7 +113,63 @@ h1 {
   box-shadow: 0 2px 8px rgba(0,0,0,.15);
 }
 
-/* Burger menu icon */
+/* === Hero === */
+
+.hero-image {
+  background-image:
+    linear-gradient(rgba(0, 0, 0, 0.5), 
+    rgba(0, 0, 0, 0.5)),
+    url("/assets/background-hero.jpeg");
+  height: 100vh;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
+.hero-text {
+  position: absolute;
+  width: 85%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #FFF;
+
+  & h1 {
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: .5em;
+  }
+
+  & p {
+    text-align: center;
+  }
+}
+
+/* === Section === */
+
+.section {
+  height: 100vh;
+  position: relative;
+
+  &__title {
+    font-size: 2rem;
+    text-align: left;
+    padding: 1em;
+    color: var(--text);
+
+    &::before {
+      content: '';
+      border: 3px solid var(--neon-green);
+      margin-right: 1em;
+    }
+  }
+}
+
+/* Components
+================= */
+
+/* === Burger menu icon === */
 
 .menu-toggle {
   padding: 1.5em 1em;
@@ -151,79 +216,20 @@ h1 {
   }
 }
 
-/* Hero */
-
-.hero-image {
-  background-image:
-    linear-gradient(rgba(0, 0, 0, 0.5), 
-    rgba(0, 0, 0, 0.5)),
-    url("/assets/background-hero.jpeg");
-  height: 100vh;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  position: relative;
-}
-
-.hero-text {
-  position: absolute;
-  width: 85%;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  color: #FFF;
-
-  & h1 {
-    font-size: 2rem;
-    text-align: center;
-    margin-bottom: .5em;
-  }
-
-  & p {
-    text-align: center;
-  }
-}
-
-/* Section */
-
-.section {
-  height: 100vh;
-  position: relative;
-
-  &__title {
-    font-size: 2rem;
-    text-align: left;
-    padding: 1em;
-    color: var(--text);
-
-    &::before {
-      content: '';
-      border: 3px solid var(--neon-green);
-      margin-right: 1em;
-    }
-  }
-}
-
-/* Icons */
+/* === Icons === */
 
 .chevron-down {
   position: absolute;
   bottom: 25px;
   color: var(--icon);
   cursor: pointer;
-
-  &:hover {
-    color: var(--text);
-    transform: scaleX(1.5) scaleY(1.5);
-    transition: all 400ms ease-in;
-  }
 }
 
 .arrow-up {
   position: absolute;
   bottom: 25px;
   right: 25px;
-  color: #FFF;
+  color: var(--text);
   cursor: pointer;
   z-index: 1;
 
@@ -233,16 +239,7 @@ h1 {
   }
 }
 
-/* Background wave */
-
-.bottom-wave {
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  left: 0;
-}
-
-/* Animation chevron-down */
+/* === Animation chevron-down === */
 
 .pulsate-fwd {
 	-webkit-animation: pulsate-fwd 1s ease-in-out infinite both;
@@ -296,13 +293,7 @@ h1 {
 
 @media screen and (min-width: 550px) {
 
-  /* Burger menu icon */
-
-  .menu-toggle {
-    display: none;
-  }
-
-  /* Navigation */
+  /* === Navigation === */
 
   .navigation {
     height: auto;
@@ -343,9 +334,23 @@ h1 {
     }
   }
 
-  /* Hero */
+  /* === Burger menu icon === */
+
+  .menu-toggle {
+    display: none;
+  }
+
+  /* === Hero === */
 
   .hero-text {  
+    & h1 {
+      font-size: 3rem;
+    }
+
+    & p {
+      font-size: 1.5rem;
+    }
+
     & h1, p {
       text-align: left;
     }
