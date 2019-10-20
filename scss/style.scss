@@ -41,7 +41,7 @@ p {
 /* === Header === */
 
 .header {
-  --header-background: #000114;
+  --header-background: #000;
   --header-text: #FFF;
 
   position: fixed;
@@ -76,6 +76,13 @@ p {
     margin: .75em;
     float: left;
   }
+}
+
+.header--scrolled {
+  --header-background: #FBFCFC;
+  --header-text: #2C3E50;
+
+  box-shadow: 0 2px 8px rgba(0,0,0,.15);
 }
 
 /* === Navigation === */
@@ -122,25 +129,19 @@ p {
   }
 }
 
-.header--scrolled {
-  --header-background: #FBFCFC;
-  --header-text: #34495E;
-
-  box-shadow: 0 2px 8px rgba(0,0,0,.15);
-}
-
 /* === Hero === */
 
-.hero-image {
-  height: 100vh;
-  background-color: #000;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  position: relative;
-}
+.hero {
+  &-image {
+    height: 100vh;
+    background-color: #000;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+  }
 
-.hero-text {
+  &-text {
   position: absolute;
   width: 85%;
   top: 50%;
@@ -149,14 +150,15 @@ p {
   font-family: 'Lato', sans-serif;
   color: #FFF;
 
-  & h1 {
-    font-size: 2rem;
-    text-align: center;
-    margin-bottom: .5em;
-  }
+    & h1 {
+      font-size: 2rem;
+      text-align: center;
+      margin-bottom: .5em;
+    }
 
-  & p {
-    text-align: center;
+    & p {
+      text-align: center;
+    }
   }
 }
 
@@ -175,7 +177,7 @@ p {
 /* === About === */
 
 .about {
-  --text: #212F3C;
+  --title: #2C3E50;
 
   grid-area: about;
   min-height: 100vh;
@@ -186,12 +188,22 @@ p {
   justify-content: center;
   
   &-intro {
-    margin-bottom: 1.5em;
+    &-left {
+      background: var(--title);
+      border-radius: 9px;
+      box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.05);
+      margin: 2em auto;
+      width: 100px;
+      height: 100px;
+      position: relative;
+    }
 
     &__picture {
-      width: 150px;
+      width: 100px;
       display: block;
-      margin: 2em auto;
+      position: absolute;
+      bottom: -7px;
+      left: 7px
     }
   
     &__title {
@@ -200,19 +212,19 @@ p {
       text-transform: uppercase;
       margin-bottom: 1.5em;
       padding: .5em;
+      color: var(--title);
     }
   
     &__description {
       padding: 0 .8em;
       font-size: 1.1rem;
       line-height: 22px;
-      color: var(--text);
     }
   }
 
   &-list {
-    width: 100%;
-    max-width: 400px;
+    width: 200px;
+    margin: 0 auto;
     height: auto;
     margin-bottom: 1em;
     display: flex;
@@ -220,15 +232,14 @@ p {
     justify-content: space-between;
     
     &__item {
-      width: 100%;
-      height: 250px;
-      margin: .5em 1em;
+      width: 200px;
+      height: 200px;
       display: flex;
       flex-direction: column;
       justify-content: center;
 
       & > img {
-        width: 125px;
+        width: 90px;
         height: auto;
         margin: 0 auto;
       }
@@ -236,7 +247,7 @@ p {
       & > p {
         font-family: 'Lato', sans-serif;
         text-align: center;
-        font-weight: 700;
+        text-transform: uppercase;
         font-size: 1.2em;
         margin: 1em;
       }
@@ -247,43 +258,58 @@ p {
 /* === Skills === */
 
 .skills {
-  --background: #F7F9F9;
-  --text: #212F3C;
+  --background: #fbfbfb;
+  --title: #2C3E50;
 
   grid-area: skills;
   min-height: 100vh;
   background: var(--background);
   position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
 
   &__title {
     margin: 2em 0;
     text-align: center;
-    color: var(--text);
+    color: var(--title);
     font-size: 1.5rem;
     font-weight: 700;
     text-transform: uppercase;
   }
 
   &-list {
-    border: 1px solid black;
     display: flex;
     flex-wrap: wrap;
     width: 200px;
-    margin: auto;
+    margin: 2em auto;
+    justify-content: space-between;
     
 
     &__item {
-      border: 1px solid black;
+      margin: .5em;
       width: 200px;
       height: 200px;
-    }
-  }
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      border-radius: 5px;
+      background-color: #FFF;
+      box-shadow: 0 2px 8px rgba(0,0,0,.15);
+      transition: all ease-in-out 350ms;
 
-  &__bg-wave {
-    position: absolute;
-    right: 0;
-    bottom: -5px;
-    left: 0;
+      & > img {
+        width: 120px;
+        margin: 1em;
+      }
+
+      & > p {
+        margin: 1em;
+        font-size: 1.1em;
+        color: #212F3C;
+        transition: opacity ease-in 250ms 100ms;
+      }
+    }
   }
 }
 
@@ -487,7 +513,7 @@ p {
 
     .skills {
       &-list {
-        width: 402px;
+        width: 500px;
       }
     }
 }
@@ -496,7 +522,7 @@ p {
 // ============= Tablettes ==========
 @media screen and (min-width: 750px) {
   p {
-    margin-bottom: 2em;
+    margin-bottom: 1.5em;
   }
 
   /* === Grid container === */
@@ -511,14 +537,9 @@ p {
     max-width: 100%;
 
     &-intro {
-      margin-top: 4.5em;
-      margin-bottom: 2em;
+      margin: 3em 0;
       display: flex;
       justify-content: space-around;
-
-      &__picture {
-        margin: 0 auto 2em;
-      }
   
       &__title {
         text-align: left;
@@ -530,36 +551,31 @@ p {
       &__description {
         padding: 0;
         font-size: 1.2rem;
+        line-height: 25px;
       }
 
       &-right {
         width: 65%;
-        margin-left: 4em;
+        padding-left: 4em;
       }
     }
 
     &-list {
-      margin-bottom: 3em;
-      max-width: 100%;
-      padding: 0;
-      
-      &__item {
-        width: 32%;
-        margin: 0;
-        margin-left: .5em;
-
-        &:first-child {
-          margin-left: 0;
-        }
-      }
+      width: 100%;
     }
   }
 
   /* === Skills === */
 
   .skills {
+    &__title {
+      font-size: 1.8rem;
+    }
+
     &-list {
-      width: 602px;
+      width: 700px;
+      height: 500px;
+      margin: 2em auto 4em;
     }
   }
 }
@@ -572,6 +588,32 @@ p {
 
   .grid-container {
     grid-template-columns: auto 1000px auto;
+  }
+
+  /* === Skills === */
+
+  .skills {
+    &-list {
+      &__item {
+        filter: grayscale(1);
+        background-color: inherit;
+        box-shadow: none;
+
+        & > p {
+          opacity: 0;
+        }
+
+        &:hover {
+          filter: grayscale(0);
+          box-shadow: 0 2px 8px rgba(0,0,0,.15);
+          background-color: #FFF;
+  
+          & > p {
+            opacity: 1;
+          }
+        }
+      }
+    }
   }
 }
 
