@@ -11,6 +11,13 @@ body {
   position: relative;
 }
 
+button {
+  font-size: 100%;
+  font-family: inherit;
+  border: 0;
+  padding: 0;
+}
+
 /* Typography
 ================= */
 
@@ -41,7 +48,7 @@ p {
 /* === Header === */
 
 .header {
-  --header-background: #000;
+  --header-background: #212A39;
   --header-text: #FFF;
 
   position: fixed;
@@ -96,7 +103,7 @@ p {
   right: 0;
   overflow: hidden;
   font-family: 'Lato', sans-serif;
-  background: var(--header-background);
+  background-color: var(--header-background);
   transform: scale(1, 0);
   transform-origin: top;
   transition:
@@ -105,7 +112,6 @@ p {
   z-index: 1;
 
   &__link {
-    font-size: 1.1rem;
     font-weight: 700;
     color: var(--header-text);
     z-index: 1;
@@ -134,7 +140,7 @@ p {
 .hero {
   &-image {
     height: 100vh;
-    background-color: #000;
+    background-color: #212A39;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -167,10 +173,11 @@ p {
 .grid-container {
   display: grid;
   grid-template-columns: auto 200px auto;
-  grid-template-rows: auto auto auto;
+  grid-template-rows: auto auto auto auto;
   grid-template-areas: 
     "about about about"
     "skills skills skills"
+    "portfolio portfolio portfolio"
     "contact contact contact";
 }
 
@@ -191,7 +198,7 @@ p {
     &-left {
       background: var(--title);
       border-radius: 9px;
-      box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.05);
+      box-shadow: 1px 1px 15px rgba(67, 38, 100, 0.4);
       margin: 2em auto;
       width: 100px;
       height: 100px;
@@ -207,23 +214,27 @@ p {
     }
   
     &__title {
+      line-height: 25px;
       text-align: center;
       font-size: 1.4rem;
       text-transform: uppercase;
       margin-bottom: 1.5em;
       padding: .5em;
       color: var(--title);
+      // letter-spacing: 1px;
     }
   
     &__description {
       padding: 0 .8em;
       font-size: 1.1rem;
       line-height: 22px;
+      letter-spacing: .5px;
+      text-align: center;
     }
   }
 
   &-list {
-    width: 150px;
+    width: 95%;
     margin: 1em auto;
     height: auto;
     display: flex;
@@ -231,23 +242,22 @@ p {
     justify-content: space-between;
     
     &__item {
-      width: 150px;
-      height: 130px;
+      width: 30%;
+      height: 135px;
       display: flex;
       flex-direction: column;
       justify-content: center;
 
       & > img {
-        width: 70px;
+        width: 50px;
         height: auto;
         margin: 0 auto;
       }
 
       & > p {
-        // font-family: 'Lato', sans-serif;
         text-align: center;
         text-transform: uppercase;
-        font-size: 1.1em;
+        font-size: .75rem;
         margin: 1em 0;
       }
     }
@@ -293,12 +303,10 @@ p {
       flex-direction: column;
       align-items: center;
       border-radius: 5px;
-      background-color: #FFF;
-      box-shadow: 0 2px 8px rgba(0,0,0,.15);
       transition: all ease-in-out 350ms;
 
       & > img {
-        width: 120px;
+        width: 110px;
         margin: 1em;
       }
 
@@ -313,15 +321,39 @@ p {
   }
 }
 
-/* === contact === */
+/* === Portfolio === */
+
+.portfolio {
+  --background: #FFF; 
+  --text: #000;
+
+  grid-area: portfolio;
+  min-height: 100vh;
+  background-color: var(--background);
+
+  &__title {
+    margin: 2em 1em .5em;
+    text-align: center;
+    color: var(--title);
+    font-size: 1.5rem;
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+}
+
+/* === Contact === */
 
 .contact {
-  --background: #212F3C;
+  --background: linear-gradient(170deg,#212A39 0%,#181E28 100%);
   --text: #FFF;
 
   grid-area: contact;
   min-height: 100vh;
-  background-image: linear-gradient(170deg,#212A39 0%,#181E28 100%);
+  background-image: var(--background);
+  padding-bottom: 120px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
 
   &__title {
     margin: 2em 0 2em;
@@ -330,6 +362,71 @@ p {
     font-size: 1.7rem;
     font-weight: 700;
     text-transform: uppercase;
+  }
+
+  &__form {
+    --background: #2E4053;
+    --border: #FFF;
+    --text: #FFF;
+    --button: #1662FF;
+
+    // border: 1px solid #FFF;
+    height: auto;
+    min-width: 250px;
+    width: 85%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    color: var(--text);
+
+    & > label {
+      margin: .5em;
+      font-family: 'Lato', sans-serif;
+    }
+
+    & > input, & > textarea {
+      min-width: 100%;
+      max-width: 100%;
+      outline: none;
+      border-style: none;
+      border-radius: 2px;
+      font-size: 1.1rem;
+      color: var(--text);
+      background-color: var(--background);
+      padding: .3em .5em;
+      border-bottom: 2px solid var(--background);
+      cursor: text;
+
+      &:focus {
+        border-bottom: 2px solid var(--border);
+        margin-bottom: 0;
+      }
+    }
+
+    & > input {
+      line-height: 30px;
+    }
+
+    & > textarea {
+      height: 150px;
+    }
+
+    & > button {
+      margin: 2em 0 0;
+      width: fit-content;
+      align-self: center;
+      color: var(--text);
+      font-size: 14px;
+      font-weight: 500;
+      line-height: 20px;
+      text-transform: uppercase;
+      text-decoration: none;
+      border-radius: 5px;
+      letter-spacing: 1px;
+      padding: 8px 23px 8px 23px;
+      background-color: var(--button);
+    }
   }
 }
 
@@ -425,16 +522,76 @@ p {
   }
 
   /* === Burger menu icon === */
-
+  
   .menu-toggle {
     right: 1em;
     top: 1.7em;
   }
+
+  /* === Contact === */
+
+  .contact {
+    &__form {
+      max-width: 350px;
+    }
+  }
+  
 }
 
 
 // ============= Phablets ===========
 @media screen and (min-width: 550px) {
+
+  /* === Hero === */
+
+  .hero-text {  
+    & h1 {
+      font-size: 2.5rem;
+    }
+
+    & p {
+      font-size: 1.5rem;
+    }
+
+    & h1, p {
+      text-align: left;
+    }
+  }
+
+  /* === Grid container == */
+
+  .grid-container {
+    grid-template-columns: auto 500px auto;
+  }
+
+  /* === About === */
+
+  .about {
+    max-width: 550px;
+
+    &-intro {
+      &__description {
+        text-align: left;
+      }
+    }
+  }
+
+  /* === Skills === */
+
+  .skills {
+    &-list {
+      width: 433px;
+    }
+  }
+}
+
+
+// ============= Tablettes ==========
+@media screen and (min-width: 750px) {
+
+  p {
+    margin-bottom: 1.5em;
+  }
 
   /* === Navigation === */
 
@@ -483,58 +640,6 @@ p {
     display: none;
   }
 
-  /* === Hero === */
-
-  .hero-text {  
-    & h1 {
-      font-size: 2.5rem;
-    }
-
-    & p {
-      font-size: 1.5rem;
-    }
-
-    & h1, p {
-      text-align: left;
-    }
-  }
-
-  /* === Grid container == */
-
-  .grid-container {
-    grid-template-columns: auto 500px auto;
-    grid-template-areas: 
-    "about about about"
-    "skills skills skills"
-    "contact contact contact";
-  }
-
-  /* === About === */
-
-  .about {
-    max-width: 550px;
-
-    &-list {
-      width: 500px
-    }
-  }
-
-  /* === Skills === */
-
-  .skills {
-    &-list {
-      width: 433px;
-    }
-  }
-}
-
-
-// ============= Tablettes ==========
-@media screen and (min-width: 750px) {
-  p {
-    margin-bottom: 1.5em;
-  }
-
   /* === Grid container === */
 
   .grid-container {
@@ -547,9 +652,13 @@ p {
     max-width: 75%;
 
     &-intro {
-      margin: 4em 0 2em;
+      margin: 4em 0 1em;
       display: flex;
       justify-content: space-around;
+
+      &-left {
+        margin: 0 auto;
+      }
   
       &__title {
         text-align: left;
@@ -571,8 +680,17 @@ p {
     }
 
     &-list {
-      width: 100%;
-      max-width: 600px;
+      &__item {
+        width: 150px;
+
+        & > img {
+          width: 60px;
+        }
+
+        & > p {
+          font-size: 1rem;
+        }
+      }
     }
   }
 
@@ -589,6 +707,24 @@ p {
       margin: 2em auto 4em;
     }
   }
+
+  /* === Portfolio === */
+
+  .portfolio {
+    &__title {
+      font-size: 1.8rem;
+    }
+  }
+
+  /* === Contact === */
+
+  .contact {
+    &__form {
+      & > button {
+        align-self: flex-end;
+      }
+    }
+  }
 }
 
 
@@ -599,6 +735,19 @@ p {
 
   .grid-container {
     grid-template-columns: auto 1000px auto;
+  }
+
+  /* === About === */
+
+  .about {
+    &-list {
+      width: 65%;
+      min-width: 450px;
+      padding-left: 4em;
+      flex-wrap: nowrap;
+      align-self: flex-end;
+      margin: 0;
+    }
   }
 
   /* === Skills === */

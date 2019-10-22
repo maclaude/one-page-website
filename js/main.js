@@ -14,7 +14,10 @@ const app = {
   },
 
   smoothScrolling: () => {
-    new SmoothScroll('a[href*="#"]');
+    new SmoothScroll('a[href*="#"]', {
+      speed: 500,
+      speedAsDuration: true
+    });
   },
 
   navigationToggle: () => {
