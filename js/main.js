@@ -1,21 +1,28 @@
 "use strict";
 
+const SmoothScroll = require('smooth-scroll');
+
 const app = {
   init: () => {
     // Global selector
     app.header =  document.querySelector('.header')
     app.navigation = document.querySelector('.navigation');
     app.menuIcon = document.querySelector('.menu-toggle');
+    app.contactForm = document.querySelector(".contact-form");
+    app.contactFormName = document.querySelector('#contact-form__name');
+    app.contactFormEmail = document.querySelector('#contact-form__email');
+    app.contactFormMessage = document.querySelector('#contact-form__message');
     // Actions
     app.smoothScrolling();
     app.navigationToggle();
     app.headerToggleOnScroll();
     app.headerStyleOnScroll();
+    app.sendContactFormData();
   },
 
   smoothScrolling: () => {
     new SmoothScroll('a[href*="#"]', {
-      speed: 500,
+      speed: 600,
       speedAsDuration: true
     });
   },
@@ -75,6 +82,45 @@ const app = {
     }, sectionHeroOptions);
 
     sectionHeroObserver.observe(sectionHero);
+  },
+
+  sendContactFormData: () => {
+    app.contactForm.addEventListener('submit', (event) => {
+      event.preventDefault();
+
+      const formData = new FormData(event.target);
+      
+      const data = {
+        name: formData.get('name'),
+        email: formData.get('email'),
+        message: formData.get('message')
+      };
+
+      Email.send({
+        Host : "smtp.elasticemail.com",
+        Username : "",
+        Password : "",
+        To : 'claude.marcantoine@gmail.com',
+        From : 'claude.marcantoine2@gmail.com',
+        Subject : `Vous avez été contacté par ${data.name} (${data.email})`,
+        Body : data.message
+      }).then(
+        message => {
+          if (message === 'OK') app.clearContactFormValues();
+        }
+      );
+    });
+  },
+
+  clearContactFormValues: () => {    
+    app.contactFormName.value = '';
+    app.contactFormName.blur();
+
+    app.contactFormEmail.value = '';
+    app.contactFormEmail.blur();
+
+    app.contactFormMessage.value = '';
+    app.contactFormMessage.blur();
   }
 };
 

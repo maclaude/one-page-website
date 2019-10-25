@@ -254,7 +254,7 @@ p {
   grid-area: contact;
   min-height: 100vh;
   background-image: var(--background);
-  padding-bottom: 120px;
+  padding-bottom: 100px;
   display: flex;
   flex-direction: column;
   justify-content: space-around; }
@@ -265,7 +265,7 @@ p {
     font-size: 1.7rem;
     font-weight: 700;
     text-transform: uppercase; }
-  .contact__form {
+  .contact-form {
     --background: #2E4053;
     --border: #FFF;
     --text: #FFF;
@@ -278,10 +278,10 @@ p {
     flex-direction: column;
     justify-content: space-around;
     color: var(--text); }
-    .contact__form > label {
+    .contact-form > label {
       margin: .5em;
       font-family: 'Lato', sans-serif; }
-    .contact__form > input, .contact__form > textarea {
+    .contact-form > input, .contact-form > textarea {
       min-width: 100%;
       max-width: 100%;
       outline: none;
@@ -293,14 +293,14 @@ p {
       padding: .3em .5em;
       border-bottom: 2px solid var(--background);
       cursor: text; }
-      .contact__form > input:focus, .contact__form > textarea:focus {
+      .contact-form > input:focus, .contact-form > textarea:focus {
         border-bottom: 2px solid var(--border);
         margin-bottom: 0; }
-    .contact__form > input {
+    .contact-form > input {
       line-height: 30px; }
-    .contact__form > textarea {
-      height: 150px; }
-    .contact__form > button {
+    .contact-form > textarea {
+      min-height: 200px; }
+    .contact-form > button {
       margin: 2em 0 0;
       width: fit-content;
       align-self: center;
@@ -313,7 +313,12 @@ p {
       border-radius: 5px;
       letter-spacing: 1px;
       padding: 8px 23px 8px 23px;
-      background-color: var(--button); }
+      background-color: var(--button);
+      transition: transform ease-in-out 200ms; }
+      .contact-form > button:hover {
+        border: none;
+        text-decoration: none;
+        transform: scale(1.1); }
 
 /* Components
 ================= */
@@ -382,7 +387,7 @@ p {
     right: 1em;
     top: 1.7em; }
   /* === Contact === */
-  .contact__form {
+  .contact-form {
     max-width: 350px; } }
 
 @media screen and (min-width: 550px) {
@@ -480,7 +485,7 @@ p {
   .portfolio__title {
     font-size: 1.8rem; }
   /* === Contact === */
-  .contact__form > button {
+  .contact-form > button {
     align-self: flex-end; } }
 
 @media screen and (min-width: 1000px) {

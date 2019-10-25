@@ -350,7 +350,7 @@ p {
   grid-area: contact;
   min-height: 100vh;
   background-image: var(--background);
-  padding-bottom: 120px;
+  padding-bottom: 100px;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -364,13 +364,12 @@ p {
     text-transform: uppercase;
   }
 
-  &__form {
+  &-form {
     --background: #2E4053;
     --border: #FFF;
     --text: #FFF;
     --button: #1662FF;
 
-    // border: 1px solid #FFF;
     height: auto;
     min-width: 250px;
     width: 85%;
@@ -409,7 +408,7 @@ p {
     }
 
     & > textarea {
-      height: 150px;
+      min-height: 200px;
     }
 
     & > button {
@@ -426,6 +425,13 @@ p {
       letter-spacing: 1px;
       padding: 8px 23px 8px 23px;
       background-color: var(--button);
+      transition: transform ease-in-out 200ms;
+
+      &:hover {
+        border: none;
+        text-decoration: none;
+        transform: scale(1.1);
+      }
     }
   }
 }
@@ -531,7 +537,7 @@ p {
   /* === Contact === */
 
   .contact {
-    &__form {
+    &-form {
       max-width: 350px;
     }
   }
@@ -719,7 +725,7 @@ p {
   /* === Contact === */
 
   .contact {
-    &__form {
+    &-form {
       & > button {
         align-self: flex-end;
       }
