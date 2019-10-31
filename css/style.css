@@ -17,7 +17,7 @@ button {
 /* Typography
 ================= */
 h1, h2 {
-  font-family: 'Lato', sans-serif; }
+  font-family: 'Open Sans', sans-serif; }
 
 h1 {
   font-size: 1.6rem;
@@ -36,7 +36,7 @@ p {
 ================= */
 /* === Header === */
 .header {
-  --header-background: #212A39;
+  --header-background: #000;
   --header-text: #FFF;
   position: fixed;
   top: 0;
@@ -63,7 +63,7 @@ p {
 
 .header--scrolled {
   --header-background: #FBFCFC;
-  --header-text: #2C3E50;
+  --header-text: #000;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15); }
 
 /* === Navigation === */
@@ -75,7 +75,7 @@ p {
   left: 0;
   right: 0;
   overflow: hidden;
-  font-family: 'Lato', sans-serif;
+  font-family: 'Open Sans', sans-serif;
   background-color: var(--header-background);
   transform: scale(1, 0);
   transform-origin: top;
@@ -91,7 +91,8 @@ p {
       opacity: 0;
       text-align: center;
       transition: opacity 250ms ease-in-out 350ms;
-      text-transform: uppercase; }
+      text-transform: uppercase;
+      font-size: .9rem; }
   .navigation--open {
     transform: scale(1, 1); }
     .navigation--open .navigation__link a {
@@ -100,9 +101,9 @@ p {
 /* === Hero === */
 .hero-image {
   height: 100vh;
-  background-color: #212A39;
+  background: #2C3E50 url("../assets/jannis-brandt-4mHaSX8zvJI-unsplash.jpg");
   background-position: center;
-  background-repeat: no-repeat;
+  background-blend-mode: multiply;
   background-size: cover;
   position: relative; }
 
@@ -112,7 +113,6 @@ p {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  font-family: 'Lato', sans-serif;
   color: #FFF; }
   .hero-text h1 {
     font-size: 2rem;
@@ -126,7 +126,7 @@ p {
   display: grid;
   grid-template-columns: auto 200px auto;
   grid-template-rows: auto auto auto auto;
-  grid-template-areas: "about about about" "skills skills skills" "portfolio portfolio portfolio" "contact contact contact"; }
+  grid-template-areas: "about about about" "informations informations informations" "portfolio portfolio portfolio" "contact contact contact"; }
 
 /* === About === */
 .about {
@@ -159,16 +159,17 @@ p {
     text-transform: uppercase;
     margin-bottom: 1.5em;
     padding: .5em;
-    color: var(--title); }
+    color: var(--title);
+    letter-spacing: .5px; }
   .about-intro__description {
     padding: 0 .8em;
     font-size: 1.1rem;
     line-height: 22px;
-    letter-spacing: .5px;
+    letter-spacing: .2px;
     text-align: center; }
   .about-list {
     width: 95%;
-    margin: 1em auto;
+    margin: 2em auto;
     height: auto;
     display: flex;
     flex-wrap: wrap;
@@ -189,63 +190,32 @@ p {
         font-size: .75rem;
         margin: 1em 0; }
 
-/* === Skills === */
-.skills {
-  --background: #fbfbfb;
-  --title: #000;
-  grid-area: skills;
+/* === Informations === */
+.informations {
   min-height: 100vh;
-  background: var(--background);
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around; }
-  .skills__title {
-    margin: 2em 1em .5em;
+  grid-area: informations;
+  background-color: #FBFCFC; }
+  .informations__title {
+    margin: 1.5em 0 1em;
     text-align: center;
-    color: var(--title);
-    font-size: 1.5rem;
+    font-size: 1.7rem;
     font-weight: 700;
     text-transform: uppercase; }
-  .skills-list {
-    display: flex;
-    flex-wrap: wrap;
-    width: 200px;
-    margin: 2em auto;
-    justify-content: space-between; }
-    .skills-list__item {
-      margin: .5em;
-      width: 200px;
-      height: 200px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
+    .informations__title::after {
+      content: "";
+      height: 3px;
+      width: 100px;
+      display: block;
+      background: #000;
       border-radius: 5px;
-      transition: all ease-in-out 350ms; }
-      .skills-list__item > img {
-        width: 110px;
-        margin: 1em; }
-      .skills-list__item > p {
-        margin: 1em;
-        font-size: 1.1em;
-        font-weight: 700;
-        color: #000;
-        transition: opacity ease-in 250ms 100ms; }
-
-/* === Portfolio === */
-.portfolio {
-  --background: #FFF;
-  --text: #000;
-  grid-area: portfolio;
-  min-height: 100vh;
-  background-color: var(--background); }
-  .portfolio__title {
-    margin: 2em 1em .5em;
-    text-align: center;
-    color: var(--title);
-    font-size: 1.5rem;
-    font-weight: 700;
-    text-transform: uppercase; }
+      margin: 1em auto 0; }
+  .informations__content {
+    min-height: 75vh;
+    display: flex;
+    flex-wrap: wrap; }
+    .informations__content-section {
+      min-height: 75vh;
+      width: 100vw; }
 
 /* === Contact === */
 .contact {
@@ -254,17 +224,25 @@ p {
   grid-area: contact;
   min-height: 100vh;
   background-image: var(--background);
-  padding-bottom: 100px;
+  padding-bottom: 80px;
   display: flex;
   flex-direction: column;
   justify-content: space-around; }
   .contact__title {
-    margin: 2em 0 2em;
+    margin: 1.5em 0 1em;
     text-align: center;
     color: var(--text);
     font-size: 1.7rem;
     font-weight: 700;
     text-transform: uppercase; }
+    .contact__title::after {
+      content: "";
+      height: 3px;
+      width: 100px;
+      display: block;
+      background: #FFF;
+      border-radius: 5px;
+      margin: 1em auto 0; }
   .contact-form {
     --background: #2E4053;
     --border: #FFF;
@@ -280,7 +258,7 @@ p {
     color: var(--text); }
     .contact-form > label {
       margin: .5em;
-      font-family: 'Lato', sans-serif; }
+      font-family: 'Open Sans', sans-serif; }
     .contact-form > input, .contact-form > textarea {
       min-width: 100%;
       max-width: 100%;
@@ -396,8 +374,6 @@ p {
     font-size: 2.5rem; }
   .hero-text p {
     font-size: 1.5rem; }
-  .hero-text h1, .hero-text p {
-    text-align: left; }
   /* === Grid container == */
   .grid-container {
     grid-template-columns: auto 500px auto; }
@@ -406,13 +382,14 @@ p {
     max-width: 550px; }
     .about-intro__description {
       text-align: left; }
-  /* === Skills === */
-  .skills-list {
-    width: 433px; } }
+    .about-list {
+      width: 100%; }
+      .about-list__item > p {
+        font-size: .85rem; } }
 
 @media screen and (min-width: 750px) {
   p {
-    margin-bottom: 1.5em; }
+    margin-bottom: 1em; }
   /* === Navigation === */
   .navigation {
     height: auto;
@@ -421,6 +398,7 @@ p {
     flex-direction: row;
     float: right;
     margin-top: 2.25em;
+    margin-right: 1em;
     transform: scale(1, 1); }
     .navigation__link {
       margin: 0 1em; }
@@ -449,7 +427,7 @@ p {
     grid-template-columns: auto 700px auto; }
   /* === About === */
   .about {
-    max-width: 75%; }
+    max-width: 700px; }
     .about-intro {
       margin: 4em 0 1em;
       display: flex;
@@ -460,13 +438,13 @@ p {
         text-align: left;
         font-size: 1.5rem;
         padding: 0;
-        margin-bottom: 2.5em; }
+        margin-bottom: 2em; }
       .about-intro__description {
         padding: 0;
-        font-size: 1.2rem;
-        line-height: 25px; }
+        font-size: 1.15rem;
+        line-height: 24px; }
       .about-intro-right {
-        width: 65%;
+        width: 600px;
         padding-left: 4em; }
     .about-list__item {
       width: 150px; }
@@ -474,16 +452,6 @@ p {
         width: 60px; }
       .about-list__item > p {
         font-size: 1rem; }
-  /* === Skills === */
-  .skills__title {
-    font-size: 1.8rem; }
-  .skills-list {
-    width: 700px;
-    height: 500px;
-    margin: 2em auto 4em; }
-  /* === Portfolio === */
-  .portfolio__title {
-    font-size: 1.8rem; }
   /* === Contact === */
   .contact-form > button {
     align-self: flex-end; } }
@@ -493,29 +461,18 @@ p {
   .grid-container {
     grid-template-columns: auto 1000px auto; }
   /* === About === */
-  .about-list {
-    width: 65%;
-    min-width: 450px;
-    padding-left: 4em;
-    flex-wrap: nowrap;
-    align-self: flex-end;
-    margin: 0; }
-  /* === Skills === */
-  .skills-list__item {
-    filter: grayscale(1);
-    background-color: inherit;
-    box-shadow: none; }
-    .skills-list__item > p {
-      opacity: 0; }
-    .skills-list__item:hover {
-      filter: grayscale(0);
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
-      background-color: #FFF; }
-      .skills-list__item:hover > p {
-        opacity: 1; } }
+  .about {
+    max-width: 800px; }
+  /* === Informations === */
+  .informations__content {
+    flex-wrap: nowrap; }
+    .informations__content-section {
+      width: 50vw; } }
 
 @media screen and (min-width: 1200px) {
-  /* ... */ }
+  /* === Hero === */
+  .hero-image {
+    background-position: initial; } }
 
 @media (min-width: 1400px) {
   /* ... */ }
