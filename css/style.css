@@ -143,11 +143,11 @@ p {
     border-radius: 9px;
     box-shadow: 1px 1px 15px rgba(67, 38, 100, 0.4);
     margin: 2em auto;
-    width: 100px;
-    height: 100px;
+    width: 75px;
+    height: 75px;
     position: relative; }
   .about-intro__picture {
-    width: 100px;
+    width: 75px;
     display: block;
     position: absolute;
     bottom: -7px;
@@ -190,7 +190,7 @@ p {
         font-size: .75rem;
         margin: 1em 0; }
 
-/* === Informations === */
+/* === Informations (parcours) === */
 .informations {
   min-height: 100vh;
   grid-area: informations;
@@ -212,10 +212,40 @@ p {
   .informations__content {
     min-height: 75vh;
     display: flex;
-    flex-wrap: wrap; }
+    flex-wrap: wrap;
+    justify-content: center; }
     .informations__content-section {
       min-height: 75vh;
-      width: 100vw; }
+      width: 100vw;
+      padding: 1em; }
+      .informations__content-section-title {
+        font-weight: 700;
+        margin-bottom: 1em;
+        text-align: center; }
+
+/* === Studies === */
+.studies-item {
+  margin-top: 3em; }
+  .studies-item__title {
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin-bottom: .5em; }
+  .studies-item__date {
+    font-family: 'Open Sans', sans-serif;
+    margin-bottom: .5em;
+    color: #273746; }
+    .studies-item__date::after {
+      content: "";
+      display: block;
+      height: 3px;
+      width: 30px;
+      border-radius: 5px;
+      background-color: var(--neon-green);
+      margin: .7em 0; }
+  .studies-item__description {
+    font-size: 1.1rem;
+    line-height: 22px;
+    letter-spacing: .1px; }
 
 /* === Contact === */
 .contact {
@@ -385,7 +415,10 @@ p {
     .about-list {
       width: 100%; }
       .about-list__item > p {
-        font-size: .85rem; } }
+        font-size: .85rem; }
+  /* === Informations === */
+  .informations__content-section {
+    max-width: 600px; } }
 
 @media screen and (min-width: 750px) {
   p {
@@ -462,12 +495,19 @@ p {
     grid-template-columns: auto 1000px auto; }
   /* === About === */
   .about {
-    max-width: 800px; }
+    max-width: 800px;
+    min-height: fit-content;
+    margin: 2em auto; }
   /* === Informations === */
   .informations__content {
-    flex-wrap: nowrap; }
+    flex-wrap: nowrap;
+    min-height: 100vh; }
     .informations__content-section {
-      width: 50vw; } }
+      width: 50vw;
+      max-width: 600px;
+      min-height: none;
+      height: fit-content;
+      margin: 1em; } }
 
 @media screen and (min-width: 1200px) {
   /* === Hero === */
