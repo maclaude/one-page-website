@@ -16,6 +16,7 @@ const app = {
     // Actions
     app.smoothScrolling();
     app.navigationToggle();
+    app.headerFixedPosition();
     app.headerToggleOnScroll();
     app.headerStyleOnScroll();
     app.sendContactFormData();
@@ -46,8 +47,22 @@ const app = {
     })
   },
 
+  headerFixedPosition: () => {
+    let heroHeight = window.innerHeight;
+
+    window.addEventListener('scroll', () => {
+      let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+      if (scrollTop > heroHeight) {
+        app.header.classList.add('header--fixed');
+      } else {
+        app.header.classList.remove('header--fixed')
+      }
+    });
+  },
+
   headerToggleOnScroll: () => {
-    let lastScrollTop = 0;
+    let lastScrollTop = (window.innerHeight / 2);
 
     window.addEventListener('scroll', () => {
       let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
@@ -61,7 +76,7 @@ const app = {
       }
 
       // Setting last scroll top position
-      lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
+      lastScrollTop = scrollTop <= (window.innerHeight / 2) ? (window.innerHeight / 2) : scrollTop;
     });
   },
 
@@ -99,15 +114,14 @@ const app = {
 
       Email.send({
         Host : "smtp.elasticemail.com",
-        Username : "claude.marcantoine2@gmail.com",
-        Password : "0d27907f-868b-4661-8009-a2805daa4c94",
+        Username : "",
+        Password : "",
         To : 'claude.marcantoine@gmail.com',
         From : 'claude.marcantoine2@gmail.com',
         Subject : `Vous avez été contacté par ${data.name} (${data.email})`,
         Body : data.message
       }).then(
         message => {
-          console.log(message);
           if (message === 'OK') app.clearContactFormValues();
         }
       );

@@ -51,7 +51,7 @@ p {
   --header-background: #000;
   --header-text: #FFF;
 
-  position: fixed;
+  position: absolute;
   top: 0;
   left: 0;
   right: 0;
@@ -59,9 +59,6 @@ p {
   color: var(--header-text);
   z-index: 999;
   transform-origin: top;
-  transition:
-    transform 400ms ease-in-out,
-    background-color 250ms ease-in;
 
   &::after {
     content: '';
@@ -77,6 +74,10 @@ p {
     }
   }
 
+  &--fixed {
+    position: fixed;
+  }
+
   &__logo {
     height: 65px;
     width: 65px;
@@ -89,6 +90,7 @@ p {
   --header-background: #FBFCFC;
   --header-text: #000;
 
+  transition: transform 300ms ease-in-out;
   box-shadow: 0 2px 8px rgba(0,0,0,.15);
 }
 
@@ -106,9 +108,7 @@ p {
   background-color: var(--header-background);
   transform: scale(1, 0);
   transform-origin: top;
-  transition:
-    transform 400ms ease-in-out,
-    background-color 250ms ease-in;
+  transition: transform 300ms ease-in-out;
   z-index: 1;
 
   &__link {
@@ -121,7 +121,7 @@ p {
       padding: 2em;
       opacity: 0;
       text-align: center;
-      transition: opacity 250ms ease-in-out 350ms;
+      transition: opacity 300ms ease-in-out 350ms;
       text-transform: uppercase;
       font-size: .9rem;
     }
@@ -139,6 +139,8 @@ p {
 /* === Hero === */
 
 .hero {
+  position: relative;
+
   &-image {
     height: 100vh;
     background: #2C3E50 url("../assets/jannis-brandt-4mHaSX8zvJI-unsplash.jpg");
@@ -648,6 +650,13 @@ p {
 
 // ============= Tablettes ==========
 @media screen and (min-width: 750px) {
+  .header {
+    --header-background: transparent;
+  }
+
+  .header--scrolled {
+    --header-background: #FBFCFC;
+  }
 
   /* === Navigation === */
 
@@ -811,12 +820,6 @@ p {
       }
     }
   }
-
-  /* === Skills === */
-
-  .skills {
-    margin: 20vh 1em 1em;
-  }
 }
 
 
@@ -847,12 +850,6 @@ p {
         margin: 1em 4em;
       }
     }
-  }
-
-  /* === Skills === */
-
-  .skills {
-    margin: 20vh 4em 1em;
   }
 }
 
