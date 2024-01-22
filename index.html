@@ -1,195 +1,253 @@
 <!DOCTYPE html>
 <html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="./assets/favicons/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/favicons/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="./assets/favicons/favicon-16x16.png"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Open+Sans:400,700|Roboto:400,700|Shadows+Into+Light&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      src="https://kit.fontawesome.com/296041408f.js"
+      crossorigin="anonymous"
+    ></script>
+    <title>Marc-Antoine CLAUDE</title>
+  </head>
 
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
-		<link rel="apple-touch-icon" sizes="180x180" href="./assets/favicons/apple-touch-icon.png">
-		<link rel="icon" type="image/png" sizes="32x32" href="./assets/favicons/favicon-32x32.png">
-		<link rel="icon" type="image/png" sizes="16x16" href="./assets/favicons/favicon-16x16.png">
-		<link rel="stylesheet" type="text/css" href="css/reset.css" />
-		<link rel="stylesheet" type="text/css" href="css/style.css" />
-		<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700|Roboto:400,700|Shadows+Into+Light&display=swap" rel="stylesheet">
-		<script src="https://kit.fontawesome.com/296041408f.js" crossorigin="anonymous"></script>
-		<title>Marc-Antoine CLAUDE</title>
-	</head>
+  <body>
+    <header class="header">
+      <img class="header__logo" src="./assets/logo.png" alt="logo" />
+      <ul class="navigation">
+        <li class="navigation__link">
+          <a href="#section-1">À propos</a>
+        </li>
+        <li class="navigation__link">
+          <a href="#section-2">Parcours</a>
+        </li>
+        <li class="navigation__link">
+          <a href="#section-3">Contact</a>
+        </li>
+      </ul>
 
-	<body>
-		<header class="header">
-			<img class="header__logo" src="./assets/logo.png" alt="logo">
-			<ul class="navigation">
-				<li class="navigation__link"><a href="#section-1">À propos</a></li>
-				<li class="navigation__link"><a href="#section-2">Parcours</a></li>
-				<li class="navigation__link"><a href="#section-3">Contact</a></li>
-			</ul>
+      <div class="menu-toggle">
+        <div class="hamburger"></div>
+      </div>
+    </header>
 
-			<div class="menu-toggle">
-				<div class="hamburger"></div>
-			</div>
-		</header>
+    <main class="main">
+      <div class="hero-image" id="section-hero">
+        <div class="hero-text">
+          <h1>Marc-Antoine CLAUDE</h1>
+          <p>Développeur web junior</p>
+        </div>
+        <a href="#section-1"
+          ><i
+            class="fas fa-angle-double-down fa-lg chevron-down pulsate-fwd"
+          ></i
+        ></a>
+      </div>
+      <div class="grid-container">
+        <section class="about" id="section-1">
+          <div class="about-intro">
+            <div class="about-intro-left">
+              <img
+                class="about-intro__picture"
+                src="./assets/javascript.png"
+                alt="web devices"
+              />
+            </div>
+            <div class="about-intro-right">
+              <h2 class="about-intro__title">
+                J'apprends le développement web
+                <span>fullstack JavaScript</span>
+              </h2>
+              <div class="about-intro__description">
+                <p>
+                  En formation continue, j’ai fait le choix de me spécialiser
+                  autour de l'environnement JavaScript <span>frontend</span> /
+                  <span>backend</span>.
+                </p>
+                <p>
+                  Intéressé par l'<span>UX/UI design</span>, j'apprécie
+                  développer des interfaces utilisateur fluides et agréables
+                </p>
+                <p>
+                  Actuellement je prépare le titre professionnel Développeur Web
+                  et Web mobile et je suis à l’écoute d’opportunités
+                  professionnelles.
+                </p>
+              </div>
+            </div>
+          </div>
+          <ul class="about-list">
+            <li class="about-list__item">
+              <img src="./assets/design.png" alt="web-design" />
+              <p>Conception</p>
+            </li>
+            <li class="about-list__item">
+              <img src="./assets/coding.png" alt="web-development" />
+              <p>Réalisation</p>
+            </li>
+            <li class="about-list__item">
+              <img src="./assets/web.png" alt="web-news" />
+              <p>Mise en ligne</p>
+            </li>
+          </ul>
+        </section>
 
-		<main class="main">
-			<div class="hero-image" id="section-hero">
-				<div class="hero-text">
-					<h1>Marc-Antoine CLAUDE</h1>
-					<p>Développeur web junior</p>
-				</div>
-				<a href="#section-1"><i class="fas fa-angle-double-down fa-lg chevron-down pulsate-fwd"></i></a>
-			</div>
-			<div class="grid-container">
-				<section class="about" id="section-1">
-					<div class="about-intro">
-						<div class="about-intro-left">
-							<img class="about-intro__picture" src="./assets/javascript.png" alt="web devices">
-						</div>
-						<div class="about-intro-right">
-							<h2 class="about-intro__title">J'apprends le développement web <span>fullstack JavaScript</span></h2>
-							<div class="about-intro__description">
-								<p>
-									En formation continue, j’ai fait le choix de me spécialiser autour de l'environnement JavaScript <span>frontend</span> / <span>backend</span>.
-								</p>
-								<p>
-									Intéressé par l'<span>UX/UI design</span>, j'apprécie développer des interfaces utilisateur fluides et agréables
-								</p>
-								<p>
-									Actuellement je prépare le titre professionnel Développeur Web et Web mobile et je suis à l’écoute d’opportunités professionnelles.
-								</p>
-							</div>
-						</div>
-					</div>
-					<ul class="about-list">
-						<li class="about-list__item">
-							<img src="./assets/design.png" alt="web-design">
-							<p>Conception</p>
-						</li>
-						<li class="about-list__item">
-							<img src="./assets/coding.png" alt="web-development">
-							<p>Réalisation</p>
-						</li>
-						<li class="about-list__item">
-							<img src="./assets/web.png" alt="web-news">
-							<p>Mise en ligne</p>
-						</li>
-					</ul>
-				</section>
+        <section class="informations" id="section-2">
+          <h1 class="informations__title">Mon parcours</h1>
+          <div class="informations__content">
+            <div class="informations__content-section studies">
+              <h2 class="informations__content-section-title">Apprentissage</h2>
+              <div class="studies-item">
+                <h3 class="studies-item__title">Début</h3>
+                <h4 class="studies-item__date">2018</h4>
+                <p class="studies-item__description">
+                  Découverte de la programmation et du développement web
+                </p>
+                <p class="studies-item__description">
+                  Apprentissage des bases en autodidacte à travers la
+                  réalisation de petits projets
+                </p>
+              </div>
+              <div class="studies-item">
+                <h3 class="studies-item__title">Formation fullstack O'clock</h3>
+                <h4 class="studies-item__date">2018 - 2019</h4>
+                <p class="studies-item__description">
+                  Formation professionnalisante développeur web fullstack de 5
+                  mois, ou j’ai pu approfondir mes connaissances en
+                  programmation et apprendre les différentes étapes de la
+                  gestion de projet ainsi que le travail en équipe et les
+                  méthodes agiles
+                </p>
+                <p class="studies-item__description">
+                  1 mois de spécialisation Frontend
+                  <span>React - Redux</span>
+                </p>
+              </div>
+              <div class="studies-item">
+                <h3 class="studies-item__title">Spécialisation JavaScript</h3>
+                <h4 class="studies-item__date">2019</h4>
+                <p class="studies-item__description">
+                  Apprentissage de l’environnement Backend
+                  <span>Node.js</span> et du système de gestion de base de
+                  données <span>MongoDB</span><br />
+                </p>
+                <p class="studies-item__description">
+                  Réalisation d’une application web pour organiser ses voyages
+                  entre amis et préparation du Titre professionnel développeur
+                  web et web mobile
+                </p>
+              </div>
+            </div>
+            <div class="informations__content-section skills">
+              <h2 class="informations__content-section-title">Compétences</h2>
+              <div class="skills-category">
+                <h3 class="skills-category__title">Conception</h3>
+                <ul class="skills-catergory__list">
+                  <li class="skills-category__list-item">Cahier des charges</li>
+                  <li class="skills-category__list-item">
+                    Structure de base de données
+                  </li>
+                  <li class="skills-category__list-item">
+                    Modèle Conceptuel de données
+                  </li>
+                  <li class="skills-category__list-item">
+                    Modèle Logique de données
+                  </li>
+                  <li class="skills-category__list-item">User-stories</li>
+                  <li class="skills-category__list-item">Wireframes</li>
+                  <li class="skills-category__list-item">
+                    Responsive Web Design
+                  </li>
+                </ul>
+              </div>
+              <div class="skills-category">
+                <h3 class="skills-category__title">
+                  Langages - Environnements
+                </h3>
+                <ul class="skills-catergory__list">
+                  <li class="skills-category__list-item">HTML</li>
+                  <li class="skills-category__list-item">CSS</li>
+                  <li class="skills-category__list-item">Sass</li>
+                  <li class="skills-category__list-item">JavaScript</li>
+                  <li class="skills-category__list-item">Node.js</li>
+                  <li class="skills-category__list-item">AJAX</li>
+                  <li class="skills-category__list-item">PHP</li>
+                </ul>
+              </div>
+              <div class="skills-category">
+                <h3 class="skills-category__title">Base de données</h3>
+                <ul class="skills-catergory__list">
+                  <li class="skills-category__list-item">SQL</li>
+                  <li class="skills-category__list-item">NoSQL</li>
+                  <li class="skills-category__list-item">MongoDB</li>
+                  <li class="skills-category__list-item">Mongoose</li>
+                  <li class="skills-category__list-item">GraphQL</li>
+                </ul>
+              </div>
+              <div class="skills-category">
+                <h3 class="skills-category__title">Librairies - Frameworks</h3>
+                <ul class="skills-catergory__list">
+                  <li class="skills-category__list-item">React</li>
+                  <li class="skills-category__list-item">Redux</li>
+                  <li class="skills-category__list-item">Express</li>
+                  <li class="skills-category__list-item">Lumen</li>
+                </ul>
+              </div>
+              <div class="skills-category">
+                <h3 class="skills-category__title">Outils</h3>
+                <ul class="skills-catergory__list">
+                  <li class="skills-category__list-item">AdobeXD</li>
+                  <li class="skills-category__list-item">Photoshop</li>
+                  <li class="skills-category__list-item">Git</li>
+                  <li class="skills-category__list-item">Webpack</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </section>
 
-				<section class="informations" id="section-2">
-					<h1 class="informations__title">Mon parcours</h1>
-					<div class="informations__content">
-						<div class="informations__content-section studies">
-							<h2 class="informations__content-section-title">Apprentissage</h2>
-							<div class="studies-item">
-								<h3 class="studies-item__title">Début</h3>
-								<h4 class="studies-item__date">2018</h4>
-								<p class="studies-item__description">
-									Découverte de la programmation et du développement web
-								</p>
-								<p class="studies-item__description">
-									Apprentissage des bases en autodidacte à travers la réalisation de petits projets
-								</p>
-							</div>
-							<div class="studies-item">
-								<h3 class="studies-item__title">Formation fullstack O'clock</h3>
-								<h4 class="studies-item__date">2018 - 2019</h4>
-								<p class="studies-item__description">
-									Formation professionnalisante développeur web fullstack de 5 mois, ou j’ai pu approfondir mes connaissances en programmation et apprendre les différentes étapes de la gestion de projet ainsi que le travail en équipe et les méthodes agiles
-								</p>
-								<p class="studies-item__description">
-									1 mois de spécialisation Frontend <span>React - Redux</span>
-								</p>
-							</div>
-							<div class="studies-item">
-								<h3 class="studies-item__title">Spécialisation JavaScript</h3>
-								<h4 class="studies-item__date">2019</h4>
-								<p class="studies-item__description">
-									Apprentissage de l’environnement Backend <span>Node.js</span> et du système de gestion de base de données <span>MongoDB</span><br>
-								</p>
-								<p class="studies-item__description">
-									Réalisation d’une application web pour organiser ses voyages entre amis et préparation du Titre professionnel développeur web et web mobile
-								</p>
-							</div>
-						</div>
-						<div class="informations__content-section skills">
-							<h2 class="informations__content-section-title">Compétences</h2>
-							<div class="skills-category">
-								<h3 class="skills-category__title">Conception</h3>
-								<ul class="skills-catergory__list">
-									<li class="skills-category__list-item">Cahier des charges</li>
-									<li class="skills-category__list-item">Structure de base de données</li>
-									<li class="skills-category__list-item">Modèle Conceptuel de données</li>
-									<li class="skills-category__list-item">Modèle Logique de données</li>
-									<li class="skills-category__list-item">User-stories</li>
-									<li class="skills-category__list-item">Wireframes</li>
-									<li class="skills-category__list-item">Responsive Web Design</li>
-								</ul>
-							</div>
-							<div class="skills-category">
-								<h3 class="skills-category__title">Langages - Environnements</h3>
-								<ul class="skills-catergory__list">
-									<li class="skills-category__list-item">HTML</li>
-									<li class="skills-category__list-item">CSS</li>
-									<li class="skills-category__list-item">Sass</li>
-									<li class="skills-category__list-item">JavaScript</li>
-									<li class="skills-category__list-item">Node.js</li>
-									<li class="skills-category__list-item">AJAX</li>
-									<li class="skills-category__list-item">PHP</li>
-								</ul>
-							</div>
-							<div class="skills-category">
-								<h3 class="skills-category__title">Base de données</h3>
-								<ul class="skills-catergory__list">
-									<li class="skills-category__list-item">SQL</li>
-									<li class="skills-category__list-item">NoSQL</li>
-									<li class="skills-category__list-item">MongoDB</li>
-									<li class="skills-category__list-item">Mongoose</li>
-									<li class="skills-category__list-item">GraphQL</li>
-								</ul>
-							</div>
-							<div class="skills-category">
-								<h3 class="skills-category__title">Librairies - Frameworks</h3>
-								<ul class="skills-catergory__list">
-									<li class="skills-category__list-item">React</li>
-									<li class="skills-category__list-item">Redux</li>
-									<li class="skills-category__list-item">Express</li>
-									<li class="skills-category__list-item">Lumen</li>
-								</ul>
-							</div>
-							<div class="skills-category">
-								<h3 class="skills-category__title">Outils</h3>
-								<ul class="skills-catergory__list">
-									<li class="skills-category__list-item">AdobeXD</li>
-									<li class="skills-category__list-item">Photoshop</li>
-									<li class="skills-category__list-item">Git</li>
-									<li class="skills-category__list-item">Webpack</li>
-								</ul>
-							</div>
-						</div>
-					</div>
-				</section>
+        <section class="contact" id="section-3">
+          <h1 class="contact__title">Me contacter</h1>
+          <form action="#" class="contact-form">
+            <label for="contact-from__name">Nom</label>
+            <input type="text" id="contact-form__name" name="name" />
 
-				<section class="contact" id="section-3">
-					<h1 class="contact__title">Me contacter</h1>
-					<form action="#" class="contact-form">
-						<label for="contact-from__name">Nom</label>
-						<input type="text" id="contact-form__name" name="name">
+            <label for="contact-form__email">Email</label>
+            <input type="email" id="contact-form__email" name="email" />
 
-						<label for="contact-form__email">Email</label>
-						<input type="email" id="contact-form__email" name="email">
+            <label for="contact-form__message">Message</label>
+            <textarea name="message" id="contact-form__message"></textarea>
 
-						<label for="contact-form__message">Message</label>
-						<textarea name="message" id="contact-form__message"></textarea>
+            <button type="submit">Envoyer</button>
+          </form>
+          <a href="#section-hero"
+            ><i class="fas fa-arrow-circle-up fa-2x arrow-up"></i
+          ></a>
+        </section>
+      </div>
+    </main>
 
-						<button type="submit">Envoyer</button>
-					</form>
-					<a href="#section-hero"><i class="fas fa-arrow-circle-up fa-2x arrow-up"></i></a>
-				</section>
-			</div>
-		</main>
-
-		<!-- SMTP JS -->
-		<script src="https://smtpjs.com/v3/smtp.js"></script>
-		<!-- Main JS file (bundle) -->
-		<script src="js/bundle.js"></script>
-	</body>
+    <script type="module" src="/main.js"></script>
+  </body>
 </html>
